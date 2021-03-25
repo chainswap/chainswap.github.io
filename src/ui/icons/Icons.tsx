@@ -31,14 +31,6 @@ export const Logo = (props) => {
 	);
 };
 
-export const Arrow = (props: SVGAttributes<SVGElement>) => {
-	return (
-		<svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-			<path d="M1 0L0 1l5 5 5-5-1-1-4 4-4-4z" fill="currentColor" />
-		</svg>
-	);
-};
-
 export const GitHub = (props: SVGAttributes<SVGElement>) => {
 	return (
 		<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -126,6 +118,17 @@ export const ArrowUp = (props: SVGAttributes<SVGElement>) => {
 	return (
 		<svg viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
 			<path d="M6.913 1H18m0 0L1 18M18 1v11.826" stroke="currentColor" strokeWidth={2} />
+		</svg>
+	);
+};
+
+export const Envelop = (props: SVGAttributes<SVGElement>) => {
+	return (
+		<svg viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+			<path
+				d="M19.207 0H2.793A2.796 2.796 0 000 2.793v11.82a2.796 2.796 0 002.793 2.794h16.414A2.796 2.796 0 0022 14.614V2.793c0 .106-.295-1.45-.819-1.974A2.796 2.796 0 0019.207 0zm.545 13.57a.524.524 0 01-.742.742l-4.867-4.868-2.772 2.773a.524.524 0 01-.742 0L7.857 9.444 2.99 14.312a.524.524 0 11-.742-.742l4.868-4.867-4.868-4.867a.524.524 0 01.742-.742L11 11.105l8.01-8.01a.525.525 0 01.742.741l-4.868 4.867 4.868 4.867z"
+				fill="currentColor"
+			/>
 		</svg>
 	);
 };

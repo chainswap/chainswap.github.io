@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: auto auto 1fr;
   height: calc(var(--window-height) - var(--header-height));
-  padding: 3.75rem var(--gutters);
+  padding: 5.75rem var(--gutters);
 
   box-sizing: border-box;
 
@@ -13,7 +13,7 @@
 .list {
   display: grid;
   justify-content: start;
-  grid-row-gap: 2rem;
+  grid-row-gap: 2.5rem;
 
   margin: 0;
   padding: 0;

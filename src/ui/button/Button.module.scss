@@ -23,7 +23,7 @@
 }
 
 .icon {
-  position: relative;
+  position: (--button-position);
 }
 
 .icon span {
@@ -40,6 +40,10 @@
 
 .small {
   font-size: 0.875rem;
+}
+
+.icon-large svg {
+  width: 1.25rem;
 }
 
 .iconBefore-large svg {
@@ -92,7 +96,7 @@
 
   &:hover,
   &:focus {
-    color: rgba(var(--pink), 1);
+    color: rgba(var(--violet), 1);
   }
 }
 
@@ -100,6 +104,17 @@
   color: rgba(var(--white), 1);
 
   border-color: rgba(var(--white), 0.5);
+
+  transition-timing-function: linear;
+  transition-duration: 250ms;
+  transition-property: color, border-color;
+
+  &:hover,
+  &:focus {
+    color: rgba(var(--violet), 1);
+
+    border-color: rgba(var(--violet), 1);
+  }
 }
 
 

@@ -2,9 +2,9 @@ import type { CSSProperties, FC, ReactNode } from "react";
 import classNames from "classnames";
 import styles from "./MobileNavigation.module.scss";
 import { MaybeWithClassName } from "../../../../helper/react/types";
-import { Button, NavLink } from "../../../../ui/button";
-import { CONTACT, SOCIAL, WHITEPAPER } from "../../../../const/const";
-import { GitHub, Medium, Telegram, Twitter } from "../../../../ui/icons/Icons";
+import { NavLink } from "../../../../ui/button";
+import { SOCIAL } from "../../../../const/const";
+import { Envelop, GitHub, Medium, Telegram, Twitter } from "../../../../ui/icons/Icons";
 import React from "react";
 import { useWindowSize } from "../../../../hooks/use-window-size";
 
@@ -24,16 +24,13 @@ const ICONS = {
 	Twitter: <Twitter />,
 	Telegram: <Telegram />,
 	Medium: <Medium />,
-};
-
-const settings = {
-	variant: "text" as "text",
-	size: "large" as "large",
-	color: "white" as "white",
+	"contact@chainswap.co": <Envelop />,
 };
 
 export const MobileNavigation: FC<ComponentType> = ({ className, sideEffect }) => {
 	const windowHeight = useWindowSize()[1];
+
+	const keys = Object.keys(SOCIAL);
 
 	return (
 		<div
@@ -41,32 +38,23 @@ export const MobileNavigation: FC<ComponentType> = ({ className, sideEffect }) =
 			style={{ "--window-height": `${windowHeight}px` } as CSSProperties}
 		>
 			<ul className={styles.list}>
-				<li className={styles.item}>
-					<NavLink className={styles.link} href={WHITEPAPER} {...settings}>
-						Whitepaper
-					</NavLink>
-				</li>
-				{Object.keys(SOCIAL).map((key) => {
+				{keys.map((key, index) => {
+					const lastItem = index === keys.length - 1;
 					return (
 						<li key={key} className={styles.item}>
 							<NavLink
-								className={styles.link}
+								className={classNames(styles.link, lastItem && styles.decoration)}
 								href={SOCIAL[key]}
 								iconBefore={ICONS[key]}
-								{...settings}
+								variant="text"
+								size="large"
+								color="white"
 							>
 								{key}
 							</NavLink>
 						</li>
 					);
 				})}
-				<NavLink
-					className={classNames(styles.link, styles.decoration)}
-					href={CONTACT}
-					{...settings}
-				>
-					contact@chainswap.co
-				</NavLink>
 			</ul>
 			{sideEffect}
 		</div>

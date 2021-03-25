@@ -11,4 +11,5 @@ export const SOCIAL = {
 	Twitter: TWITTER_PATH,
 	Telegram: TELEGRAM_PATH,
 	Medium: MEDIUM_PATH,
+	"contact@chainswap.co": CONTACT,
 };
