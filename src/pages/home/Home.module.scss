@@ -62,14 +62,13 @@
 
   width: 100%;
   max-width: var(--max-width);
-  padding: 2.5rem var(--gutters);
+  padding: 4.5rem var(--gutters);
   margin: 0 auto;
 
   box-sizing: border-box;
 
   @include mixin.until(media.$sm) {
     justify-items: start;
-    padding: 4.5rem var(--gutters);
   }
 
   @include mixin.from(media.$md) {
