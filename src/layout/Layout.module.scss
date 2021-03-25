@@ -1,0 +1,20 @@
+@use "../helper/style/mixin";
+@use "../helper/style/media";
+
+.component {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+}
+
+.header {
+  width: 100%;
+}
+
+.main {
+  flex-grow: 1;
+
+  display: grid;
+  align-content: start;
+}

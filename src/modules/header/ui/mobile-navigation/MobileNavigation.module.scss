@@ -1,0 +1,37 @@
+.component {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: calc(var(--window-height) - var(--header-height));
+  padding: 3.75rem var(--gutters);
+
+  box-sizing: border-box;
+
+  background-color: rgba(var(--black), 1);
+}
+
+
+.list {
+  display: grid;
+  justify-content: start;
+  grid-row-gap: 2rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.item {
+  position: relative;
+}
+
+.link {
+  --font-family-button: "Rokkitt", sans-serif;
+}
+
+.decoration {
+  --button-decoration: underline;
+}
+
+
+

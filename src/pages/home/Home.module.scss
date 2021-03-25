@@ -1,0 +1,120 @@
+@use "../../helper/style/mixin";
+@use "../../helper/style/media";
+
+.component {
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  height: calc(var(--window-height) - var(--header-height));
+
+  @include mixin.from(media.$sm) {
+    grid-template-rows: 1.5fr 1fr;
+
+    height: var(--window-height);
+  }
+
+  @include mixin.from(media.$md) {
+    grid-template-rows: 1fr auto;
+  }
+}
+
+.ratio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.video {
+  @include mixin.until(media.$sm) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.vertical {
+  @include mixin.from(media.$sm) {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.horizontal {
+  @include mixin.from(media.$sm) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.footer {
+  display: grid;
+  align-items: center;
+
+  width: 100%;
+
+  background-color: rgba(var(--black), 1);
+}
+
+.wrapper {
+  display: grid;
+
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 2.5rem var(--gutters);
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  @include mixin.until(media.$sm) {
+    justify-items: start;
+    padding: 4.5rem var(--gutters);
+  }
+
+  @include mixin.from(media.$md) {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  margin: 0;
+}
+
+.text {
+  margin: 0;
+  margin-top: 1.5rem;
+
+  @include mixin.until(media.$md) {
+    display: grid;
+  }
+
+  @include mixin.from(media.$sm) {
+    margin-top: 2.5rem;
+  }
+
+  @include mixin.from(media.$md) {
+    margin: 0;
+  }
+}
+
+.launch {
+  --justify-content-usoutlined-button: space-between;
+
+  width: 100%;
+  margin-top: 2rem;
+
+  @include mixin.from(media.$sm) {
+    width: auto;
+    min-width: 18.75rem;
+  }
+
+  @include mixin.from(media.$md) {
+    margin-top: 0;
+  }
+}
+
+
+

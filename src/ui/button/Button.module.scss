@@ -1,0 +1,105 @@
+@use "../../helper/style/mixin";
+@use "../../helper/style/media";
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-family: var(--font-family-button);
+  line-height: var(--line-136);
+  text-decoration: var(--button-decoration);
+
+  border: 0;
+
+  background-color: transparent;
+
+  cursor: pointer;
+
+  &:disabled {
+    cursor: initial;
+    pointer-events: none;
+  }
+}
+
+.icon {
+  position: relative;
+}
+
+.icon span {
+  @include mixin.visuallyHidden();
+}
+
+.large {
+  font-size: 1.5rem;
+}
+
+.medium {
+  font-size: 1rem;
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+.iconBefore-large svg {
+  width: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+.iconBefore-small svg {
+  width: 0.625rem;
+  margin-right: 0.5rem;
+}
+
+.iconAfter-medium svg {
+  width: 1rem;
+  margin-left: 0.5rem;
+}
+
+.iconAfter-small svg {
+  width: 0.625rem;
+  margin-left: 0.5rem;
+}
+
+.text {
+  justify-content: start;
+
+  padding: 0;
+}
+
+.outlined {
+  justify-content: var(--justify-content-usoutlined-button);
+
+  min-height: 3.875rem;
+  padding: 0.5rem 1.5rem;
+
+  box-sizing: border-box;
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3.5625rem;
+
+  background-color: transparent;
+}
+
+.text-white {
+  color: rgba(var(--white), 1);
+
+  transition-timing-function: linear;
+  transition-duration: 250ms;
+  transition-property: color;
+
+  &:hover,
+  &:focus {
+    color: rgba(var(--pink), 1);
+  }
+}
+
+.outlined-white {
+  color: rgba(var(--white), 1);
+
+  border-color: rgba(var(--white), 0.5);
+}
+
+
