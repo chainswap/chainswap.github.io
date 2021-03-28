@@ -36,12 +36,7 @@ export const Home: FC<HomeType> = () => {
 				style={{ "--window-height": windowHeight ? `${windowHeight}px` : "100vh" } as CSSProperties}
 			>
 				<div className={styles.ratio} ref={setSectionRef}>
-					<Video
-						className={classNames(styles.video, ratio < 1.8 ? styles.vertical : styles.horizontal)}
-						source={video}
-						autoPlay={true}
-						loop
-					/>
+					<Video className={styles.video} source={video} autoPlay={true} loop />
 				</div>
 				<div className={styles.footer}>
 					<div className={styles.wrapper}>
