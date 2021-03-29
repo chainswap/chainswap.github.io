@@ -7,6 +7,7 @@ import { LaunchPopUp } from "../../modules/launch-pop-up";
 import { Body1, Heading1 } from "../../ui/typography";
 
 import video from "./assets/video.mp4";
+import image from "./assets/image.jpg";
 import { useWindowSize } from "../../hooks/use-window-size";
 import { Button } from "../../ui/button";
 import { useResizeObserver } from "../../hooks/use-resize-observer";
@@ -35,8 +36,8 @@ export const Home: FC<HomeType> = () => {
 				className={styles.component}
 				style={{ "--window-height": windowHeight ? `${windowHeight}px` : "100vh" } as CSSProperties}
 			>
-				<div className={styles.ratio} ref={setSectionRef}>
-					<Video className={styles.video} source={video} autoPlay={true} loop />
+				<div className={styles.video} ref={setSectionRef}>
+					<Video source={video} autoPlay={true} imageSource={image} loop />
 				</div>
 				<div className={styles.footer}>
 					<div className={styles.wrapper}>
