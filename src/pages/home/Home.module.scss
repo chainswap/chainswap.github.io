@@ -3,7 +3,7 @@
 
 .component {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 55.5vw 1fr;
 
   height: calc(var(--window-height) - var(--header-height));
 
@@ -19,6 +19,8 @@
 }
 
 .video {
+  position: relative;
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,15 +29,10 @@
   overflow: hidden;
 }
 
-.video > *{
+.video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  @include mixin.until(media.$sm) {
-    width: 100%;
-    height: auto;
-  }
 }
 
 .footer {

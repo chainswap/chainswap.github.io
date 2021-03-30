@@ -18,16 +18,6 @@ type HomeType = {};
 export const Home: FC<HomeType> = () => {
 	const windowHeight = useWindowSize()[1];
 
-	const [sectionRef, setSectionRef] = useState<HTMLElement | null>(null);
-
-	const [sectionWidth, setSectionWidth] = useState(0);
-	useResizeObserver(sectionRef, (ref) => setSectionWidth(ref.clientWidth));
-
-	const [sectionHeight, setSectionHeight] = useState(0);
-	useResizeObserver(sectionRef, (ref) => setSectionHeight(ref.clientHeight));
-
-	const ratio = sectionWidth / sectionHeight;
-
 	const { popUp, close, toggle } = useControlPopUp();
 
 	return (
@@ -36,9 +26,7 @@ export const Home: FC<HomeType> = () => {
 				className={styles.component}
 				style={{ "--window-height": windowHeight ? `${windowHeight}px` : "100vh" } as CSSProperties}
 			>
-				<div className={styles.video} ref={setSectionRef}>
-					<Video source={video} autoPlay={true} imageSource={image} loop />
-				</div>
+				<Video className={styles.video} source={video} autoPlay={true} imageSource={image} loop />
 				<div className={styles.footer}>
 					<div className={styles.wrapper}>
 						<div className={styles.texts}>
