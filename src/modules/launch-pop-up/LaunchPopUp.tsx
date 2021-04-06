@@ -7,7 +7,7 @@ import styles from "./LaunchPopUp.module.scss";
 const LINKS = [
 	{
 		caption: "Cross chain assets",
-		href: "https://chainswap.exchange",
+		href: "https://chainswap.com",
 	},
 	{
 		caption: (
