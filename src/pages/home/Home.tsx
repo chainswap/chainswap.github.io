@@ -47,11 +47,11 @@ export const Home: FC<HomeType> = () => {
 					<div className={styles.wrapper}>
 						<div className={styles.texts}>
 							<Heading1 className={styles.title} Component="h2">
-								The hub for all smart chains
+								The cross-chain hub for all chains
 							</Heading1>
 							<Body1 className={styles.text}>
-								Assets. Application. Alliance.{" "}
-								<span style={{ opacity: 0.4 }}>All chains with one dream.</span>
+								Asset. Data. Application.{" "}
+								{/*<span style={{ opacity: 0.4 }}>All chains with one dream.</span>*/}
 							</Body1>
 						</div>
 						<Button
