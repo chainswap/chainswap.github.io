@@ -7,6 +7,7 @@ import { LaunchPopUp } from "../../modules/launch-pop-up";
 import { Body1, Heading1 } from "../../ui/typography";
 
 import video from "./assets/video.mp4";
+import image from "./assets/image.jpg";
 import { useWindowSize } from "../../hooks/use-window-size";
 import { Button } from "../../ui/button";
 import { useResizeObserver } from "../../hooks/use-resize-observer";
@@ -17,16 +18,6 @@ type HomeType = {};
 export const Home: FC<HomeType> = () => {
 	const windowHeight = useWindowSize()[1];
 
-	const [sectionRef, setSectionRef] = useState<HTMLElement | null>(null);
-
-	const [sectionWidth, setSectionWidth] = useState(0);
-	useResizeObserver(sectionRef, (ref) => setSectionWidth(ref.clientWidth));
-
-	const [sectionHeight, setSectionHeight] = useState(0);
-	useResizeObserver(sectionRef, (ref) => setSectionHeight(ref.clientHeight));
-
-	const ratio = sectionWidth / sectionHeight;
-
 	const { popUp, close, toggle } = useControlPopUp();
 
 	return (
@@ -35,14 +26,7 @@ export const Home: FC<HomeType> = () => {
 				className={styles.component}
 				style={{ "--window-height": windowHeight ? `${windowHeight}px` : "100vh" } as CSSProperties}
 			>
-				<div className={styles.ratio} ref={setSectionRef}>
-					<Video
-						className={classNames(styles.video, ratio < 1.8 ? styles.vertical : styles.horizontal)}
-						source={video}
-						autoPlay={true}
-						loop
-					/>
-				</div>
+				<Video className={styles.video} source={video} autoPlay={true} imageSource={image} loop />
 				<div className={styles.footer}>
 					<div className={styles.wrapper}>
 						<div className={styles.texts}>

@@ -2,10 +2,14 @@
 @use "../helper/style/media";
 
 .component {
+  --default-height: 100vh;
+
   display: flex;
   flex-direction: column;
 
-  height: 100vh;
+  height: var(--height);
+
+  background-color: rgba(var(--black), 1);
 }
 
 .header {
