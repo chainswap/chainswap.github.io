@@ -21,7 +21,7 @@ const ICONS = {
 	Twitter: <Twitter />,
 	Telegram: <Telegram />,
 	Medium: <Medium />,
-	"contact@chainswap.co": <Envelop />,
+	"contact@chainswap.com": <Envelop />,
 };
 
 export const Navigation: FC<ComponentType> = ({ className }) => {
