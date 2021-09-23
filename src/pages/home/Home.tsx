@@ -15,6 +15,20 @@ import { useControlPopUp } from "../../ui/pop-up-container";
 
 type HomeType = {};
 
+const logos = [
+	"alamedaResearch.png",
+	"cms.png",
+	"continueCapital.png",
+	"rarestone.png",
+	"ngc.png",
+	"sanctorCapital.png",
+	"mask.png",
+	"mondayCapital.png",
+	"spark.png",
+	"obc.png",
+	"dreamFund.png",
+];
+
 export const Home: FC<HomeType> = () => {
 	const windowHeight = useWindowSize()[1];
 
@@ -50,7 +64,31 @@ export const Home: FC<HomeType> = () => {
 						</Button>
 					</div>
 				</div>
+				{/* <div className={styles.grid}>
+					{logos.map((img) => {
+						return <img className={styles.img} src={`images/partner/${img}`} alt="" />;
+					})}
+				</div> */}
+				<div className={styles.marqueeWrapper}>
+					<div className={styles.marquee}>
+						{logos.map((img) => {
+							return (
+								<div className={styles.imgWrap} key={img}>
+									<img className={styles.img} src={`images/partners/${img}`} alt="" />
+								</div>
+							);
+						})}
+						{/* {logos.map((img) => {
+							return (
+								<div className={styles.imgWrap} key={img}>
+									<img className={styles.img} src={`images/partners/${img}`} alt="" />
+								</div>
+							);
+						})} */}
+					</div>
+				</div>
 			</section>
+
 			{popUp.defined && <LaunchPopUp control={popUp} close={close} />}
 		</>
 	);
