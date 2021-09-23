@@ -56,6 +56,16 @@ export const MobileNavigation: FC<ComponentType> = ({ className, sideEffect }) =
 					);
 				})}
 			</ul>
+
+			<a
+				target="_blank"
+				href="https://docs.chainswap.com/"
+				rel="noreferrer"
+				className={styles.docs}
+			>
+				Docs
+			</a>
+
 			{sideEffect}
 		</div>
 	);

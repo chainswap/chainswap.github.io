@@ -3,9 +3,9 @@
 
 .component {
 	display: grid;
-	grid-template-rows: 55.5vw 1fr 1fr;
-
-	height: calc(var(--window-height) - var(--header-height));
+	grid-template-rows: 55.5vw 1fr auto;
+	background-color: #000000;
+	height: auto;
 
 	@include mixin.from(media.$sm) {
 		grid-template-rows: 1.5fr 1fr 1fr;
@@ -56,6 +56,7 @@
 
 	@include mixin.until(media.$sm) {
 		justify-items: start;
+		padding: 2.5rem var(--gutters);
 	}
 
 	@include mixin.from(media.$md) {

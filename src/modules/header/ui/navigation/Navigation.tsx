@@ -38,6 +38,17 @@ export const Navigation: FC<ComponentType> = ({ className }) => {
 						</li>
 					);
 				})}
+				<span className={styles.divider}></span>
+				<li>
+					<a
+						target="_blank"
+						href="https://docs.chainswap.com/"
+						rel="noreferrer"
+						className={styles.docs}
+					>
+						Docs
+					</a>
+				</li>
 			</ul>
 		</div>
 	);
