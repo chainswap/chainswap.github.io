@@ -1,0 +1,28 @@
+@use "../helper/style/mixin";
+@use "../helper/style/media";
+
+.component {
+	--default-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+	height: var(--height);
+
+	background-color: rgba(var(--black), 1);
+}
+
+.isBlack {
+	background-color: rgba(var(--white), 1);
+}
+
+.header {
+	width: 100%;
+}
+
+.main {
+	flex-grow: 1;
+
+	display: grid;
+	align-content: start;
+}
