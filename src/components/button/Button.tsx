@@ -44,7 +44,7 @@ type ButtonProps<T extends EmptyObject> = ButtonComponentType &
 
 export type CommonType = ButtonComponentType & MaybeWithClassName & WithChildren;
 
-export const ButtonComponent: FC<ButtonProps<EmptyObject> & MaybeWithClassName & WithChildren> = ({
+export const ButtonComponent: FC<ButtonProps<EmptyObject> & MaybeWithClassName> = ({
 	Component = "button",
 	className,
 	children,
@@ -95,7 +95,7 @@ export const Button: FC<CommonType & { submit?: boolean }> = ({ submit, ...rest 
 
 export const NavLink: FC<CommonType & { href: string; as?: string }> = ({ href, as, ...rest }) => {
 	const Button = React.forwardRef((props, ref) => (
-		<ButtonComponent Component="a" role="link" {...rest} ref={ref} />
+		<ButtonComponent Component="a" role="link" {...rest} ref={ref} href={href} />
 	));
 	return (
 		<>
