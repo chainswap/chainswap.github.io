@@ -37,7 +37,7 @@ const BlockList: BlockType[] = [
 	{
 		title: "NFT Bridge",
 		subTitle: "Permissionless crosschain bridge for all NFTs",
-		status: Status.live,
+		status: Status.comingSoon,
 		img: "NFTBridge.png",
 		link: "",
 	},
@@ -46,7 +46,7 @@ const BlockList: BlockType[] = [
 		subTitle: "Chainswap Bridge that integrates with Anyswap Solution ",
 		status: Status.live,
 		img: "chainswapAnyswap.png",
-		link: "",
+		link: "https://exchange.chainswap.com/",
 	},
 	{
 		title: "Crosschain DEX",
