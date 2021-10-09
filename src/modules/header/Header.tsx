@@ -3,17 +3,17 @@ import { FC, useCallback, useState, useEffect, useRef, CSSProperties } from "rea
 
 import styles from "./Header.module.scss";
 import { MaybeWithClassName } from "../../helper/react/types";
-import { NavLink } from "../../ui/button";
-import { Logo } from "../../ui/icons/Icons";
+import { NavLink } from "../../components/button";
+import { Logo } from "../../components/icons/Icons";
 import { Navigation } from "./ui/navigation";
 import { FocusOn } from "react-focus-on";
 import { useScatteredContinuousState } from "../../hooks/use-continuous-state";
 import { MobileNavigation } from "./ui/mobile-navigation";
-import { Toggle, Close } from "../../ui/icons/Icons";
+import { Toggle, Close } from "../../components/icons/Icons";
 
-type HeaderType = {};
+type HeaderType = { isBlack?: boolean };
 
-export const Header: FC<HeaderType & MaybeWithClassName> = ({ className }) => {
+export const Header: FC<HeaderType & MaybeWithClassName> = ({ className, isBlack }) => {
 	const [mobileNavigationShown, setMobileNavigationVisibility] = useState(false);
 	const mobileNavigation = useScatteredContinuousState(mobileNavigationShown, {
 		timeout: 350,
@@ -34,7 +34,7 @@ export const Header: FC<HeaderType & MaybeWithClassName> = ({ className }) => {
 
 	return (
 		<header
-			className={classNames(styles.component, className)}
+			className={classNames(styles.component, className, isBlack && styles.black)}
 			style={{ "--underline": mobileNavigation.present ? "block" : "none" } as CSSProperties}
 		>
 			<div className={styles.wrapper}>
@@ -49,7 +49,7 @@ export const Header: FC<HeaderType & MaybeWithClassName> = ({ className }) => {
 			</div>
 			{mobileNavigation.defined && (
 				<FocusOn
-					autoFocus
+					// autoFocus
 					enabled={mobileNavigation.present}
 					onEscapeKey={closeMobileNavigationDisplay}
 					onClickOutside={closeMobileNavigationDisplay}

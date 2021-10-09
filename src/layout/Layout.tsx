@@ -12,6 +12,7 @@ type LayoutType = {
 	description?: string;
 	keywords?: string;
 	className?: string;
+	isBlack?: boolean;
 };
 
 export const Layout: FC<LayoutType> = ({
@@ -20,12 +21,13 @@ export const Layout: FC<LayoutType> = ({
 	title = "",
 	description = "",
 	keywords,
+	isBlack,
 }) => {
 	const windowHeight = useWindowSize()[1];
 
 	return (
 		<div
-			className={classNames(styles.component, className)}
+			className={classNames(styles.component, className, isBlack && styles.isBlack)}
 			style={
 				{
 					"--height": windowHeight ? `${windowHeight}px` : "var(--default-height)",
@@ -37,7 +39,7 @@ export const Layout: FC<LayoutType> = ({
 				<meta name="Description" content={description} />
 				<meta name="keywords" content={keywords} />
 			</Head>
-			<Header className={styles.header} />
+			<Header className={styles.header} isBlack={isBlack} />
 			<main className={styles.main}>{children}</main>
 		</div>
 	);

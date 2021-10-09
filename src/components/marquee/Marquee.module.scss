@@ -1,0 +1,50 @@
+@use "../../helper/style/mixin";
+@use "../../helper/style/media";
+
+.marquee {
+	display: flex;
+	width: max-content;
+	gap: 40px;
+	margin: 0 auto;
+	img {
+		max-height: 100%;
+	}
+	@include mixin.until(media.$xl) {
+		width: unset;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		gap: 15px;
+		padding: 33px 24px;
+	}
+	@include mixin.until(media.$md) {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+.imgWrap {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	min-height: 80px;
+	padding: 0;
+	width: auto;
+	@include mixin.until(media.$md) {
+		width: unset;
+		min-height: unset;
+		height: 30px;
+	}
+}
+
+.img {
+	@include mixin.until(media.$sm) {
+		width: 100%;
+		height: 70%;
+		object-fit: contain;
+	}
+}
+
+.imgInvert {
+	filter: invert(100%);
+}

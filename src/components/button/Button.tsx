@@ -40,7 +40,7 @@ type ButtonProps<T extends EmptyObject> = ButtonComponentType &
 		| ({
 				Component: ComponentType<T>;
 		  } & T)
-	);
+	) & { ref?: React.Ref<any> };
 
 export type CommonType = ButtonComponentType & MaybeWithClassName & WithChildren;
 
@@ -93,21 +93,28 @@ export const Button: FC<CommonType & { submit?: boolean }> = ({ submit, ...rest 
 	<ButtonComponent Component="button" type={submit ? "submit" : "button"} {...rest} />
 );
 
-export const NavLink: FC<CommonType & { href: string; as?: string }> = ({ href, as, ...rest }) => (
-	<>
-		{href.startsWith("http") || href.startsWith("mailto") || href.startsWith("tel") ? (
-			<ButtonComponent
-				Component="a"
-				href={href}
-				role="link"
-				target="_blank"
-				rel="noopener noreferrer"
-				{...rest}
-			/>
-		) : (
-			<Link href={href} as={as} passHref>
-				<ButtonComponent Component="a" role="link" {...rest} />
-			</Link>
-		)}
-	</>
-);
+export const NavLink: FC<CommonType & { href: string; as?: string }> = ({ href, as, ...rest }) => {
+	const Button = React.forwardRef((props, ref) => (
+		<ButtonComponent Component="a" role="link" {...rest} ref={ref} />
+	));
+	return (
+		<>
+			{href.startsWith("http") || href.startsWith("mailto") || href.startsWith("tel") ? (
+				<ButtonComponent
+					Component="a"
+					href={href}
+					role="link"
+					target="_blank"
+					rel="noopener noreferrer"
+					{...rest}
+				/>
+			) : (
+				<Link href={href} as={as} passHref>
+					<>
+						<Button />
+					</>
+				</Link>
+			)}
+		</>
+	);
+};

@@ -66,6 +66,10 @@ export const Heading1: FC<HeadingType> = ({ Component = "h1", ...props }) => {
 	);
 };
 
+export const Heading2: FC<HeadingType> = ({ Component = "h1", ...props }) => {
+	return <Typography Component={Component} size={78} weight="bold" variant="primary" {...props} />;
+};
+
 type BodyComponentType = Exclude<keyof JSX.IntrinsicElements, "button" | "a">;
 
 type BodyType = Omit<TypographyType, "size" | "Component" | "variant"> & {

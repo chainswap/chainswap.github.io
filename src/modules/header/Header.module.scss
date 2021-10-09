@@ -2,135 +2,151 @@
 @use "../../helper/style/media";
 
 .component {
-  position: relative;
+	position: relative;
 
-  @include mixin.from(media.$sm) {
-    position: absolute;
-  }
+	@include mixin.from(media.$sm) {
+		position: absolute;
+	}
 
-  &::after {
-    position: absolute;
-    top: var(--header-height);
-    left: 0;
-    right: 0;
-    z-index: 10;
-    content: "";
+	&::after {
+		position: absolute;
+		top: var(--header-height);
+		left: 0;
+		right: 0;
+		z-index: 10;
+		content: "";
 
-    display: var(--underline);
-    height: 1px;
-    background-color:  rgba(var(--white), 0.4);
-  }
+		display: var(--underline);
+		height: 1px;
+		background-color: rgba(var(--white), 0.4);
+	}
 }
 
 .wrapper {
-  position: relative;
-  z-index: 10;
+	position: relative;
+	z-index: 10;
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 
-  max-width: var(--max-width);
-  height: var(--header-height);
-  padding: 0 var(--gutters);
-  margin: 0 auto;
+	max-width: var(--max-width);
+	height: var(--header-height);
+	padding: 0 var(--gutters);
+	margin: 0 auto;
 
-  box-sizing: border-box;
+	box-sizing: border-box;
 
-  @include mixin.until(media.$sm) {
-    background-color: rgba(var(--black), 1);
-  }
+	@include mixin.until(media.$sm) {
+		// background-color: rgba(var(--black), 1);
+	}
 
-  @include mixin.from(media.$lg) {
-    padding: 0 calc(var(--gutters) / 2);
-  }
+	@include mixin.from(media.$lg) {
+		padding: 0 calc(var(--gutters) / 2);
+	}
 }
 
 .logo {
-  width: 7.5rem;
-  margin-right: auto;
+	width: 7.5rem;
+	margin-right: auto;
 
-  color: rgba(var(--white), 1);
+	color: rgba(var(--white), 1);
 
-  @include mixin.from(media.$md) {
-    width: 11.75rem;
-  }
+	@include mixin.from(media.$md) {
+		width: 11.75rem;
+	}
 }
 
-
 .logo svg {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .navigation {
-  @include mixin.until(media.$sm) {
-    display: none;
-  }
+	@include mixin.until(media.$sm) {
+		display: none;
+	}
 }
 
 .launch {
-  margin-left: 2.25rem;
+	margin-left: 2.25rem;
 
-  @include mixin.until(media.$sm) {
-    display: none;
-  }
+	@include mixin.until(media.$sm) {
+		display: none;
+	}
 }
 
 .toggle {
-  position: relative;
+	position: relative;
 
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 
-  color: rgba(var(--white), 1);
+	color: rgba(var(--white), 1);
 
-  border: 0;
+	border: 0;
 
-  background-color: transparent;
+	background-color: transparent;
 
-  transition-timing-function: linear;
-  transition-duration: 250ms;
-  transition-property: color;
+	transition-timing-function: linear;
+	transition-duration: 250ms;
+	transition-property: color;
 
-  @include mixin.from(media.$sm) {
-    display: none;
-  }
+	@include mixin.from(media.$sm) {
+		display: none;
+	}
 
-  &:hover,
-  &:focus {
-    color: rgba(var(--pink), 1);
-  }
+	&:hover,
+	&:focus {
+		color: rgba(var(--pink), 1);
+	}
 }
 
 .toggle span {
-  @include mixin.visuallyHidden();
+	@include mixin.visuallyHidden();
 }
 
 .dropdown {
-  position: absolute;
-  z-index: 5;
+	position: absolute;
+	z-index: 5;
 
-  width: 100%;
+	width: 100%;
 
-  transform: translateY(-100%);
-  pointer-events: none;
-  visibility: hidden;
+	transform: translateY(-100%);
+	pointer-events: none;
+	visibility: hidden;
 
-  transition-timing-function: linear;
-  transition-duration: 350ms;
-  transition-property: transform;
+	transition-timing-function: linear;
+	transition-duration: 350ms;
+	transition-property: transform;
 
-  @include mixin.from(media.$lg) {
-    display: none;
-  }
+	@include mixin.from(media.$lg) {
+		display: none;
+	}
 }
 
 .animation {
-  transform: translateY(0);
+	transform: translateY(0);
 }
 
 .visible {
-  pointer-events: all;
-  visibility: visible;
+	pointer-events: all;
+	visibility: visible;
+}
+
+.black {
+	svg {
+		color: rgba(var(--black), 0.4);
+	}
+	li {
+		color: rgba(var(--black), 0.6);
+	}
+	span {
+		background: rgba(var(--black), 0.4);
+	}
+	.logo {
+		svg {
+			color: #000000;
+		}
+	}
 }

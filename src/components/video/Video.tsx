@@ -24,7 +24,6 @@ export const Video = forwardRef<HTMLVideoElement, VideoType>(
 			if (autoPlay && videoRef.current) {
 				videoRef.current.play().then(
 					() => {
-						console.log("video is playing");
 						setImageFallback(false);
 					},
 					(error) => {

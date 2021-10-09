@@ -1,33 +1,17 @@
-import { FC, useState, useRef, CSSProperties } from "react";
-import classNames from "classnames";
+import { FC, CSSProperties } from "react";
 import styles from "./Home.module.scss";
-import { Video } from "../../ui/video";
-import { ArrowUp } from "../../ui/icons/Icons";
+import { Video } from "../../components/video";
+import { ArrowUp } from "../../components/icons/Icons";
 import { LaunchPopUp } from "../../modules/launch-pop-up";
-import { Body1, Heading1 } from "../../ui/typography";
-
-import video from "./assets/video.mp4";
-import image from "./assets/image.jpg";
+import { Body1, Heading1 } from "../../components/typography";
+import video from "../../assets/video.mp4";
+import image from "../../assets/image.jpg";
 import { useWindowSize } from "../../hooks/use-window-size";
-import { Button } from "../../ui/button";
-import { useResizeObserver } from "../../hooks/use-resize-observer";
-import { useControlPopUp } from "../../ui/pop-up-container";
+import { Button } from "../../components/button";
+import { useControlPopUp } from "../../components/pop-up-container";
+import { Marquee } from "../../components/marquee";
 
 type HomeType = {};
-
-const logos = [
-	"alamedaResearch.png",
-	"cms.png",
-	"continueCapital.png",
-	"rarestone.png",
-	"ngc.png",
-	"sanctorCapital.png",
-	"mask.png",
-	"mondayCapital.png",
-	"spark.png",
-	"obc.png",
-	"dreamFund.png",
-];
 
 export const Home: FC<HomeType> = () => {
 	const windowHeight = useWindowSize()[1];
@@ -64,29 +48,7 @@ export const Home: FC<HomeType> = () => {
 						</Button>
 					</div>
 				</div>
-				{/* <div className={styles.grid}>
-					{logos.map((img) => {
-						return <img className={styles.img} src={`images/partner/${img}`} alt="" />;
-					})}
-				</div> */}
-				<div className={styles.marqueeWrapper}>
-					<div className={styles.marquee}>
-						{logos.map((img) => {
-							return (
-								<div className={styles.imgWrap} key={img}>
-									<img className={styles.img} src={`images/partners/${img}`} alt="" />
-								</div>
-							);
-						})}
-						{/* {logos.map((img) => {
-							return (
-								<div className={styles.imgWrap} key={img}>
-									<img className={styles.img} src={`images/partners/${img}`} alt="" />
-								</div>
-							);
-						})} */}
-					</div>
-				</div>
+				<Marquee />
 			</section>
 
 			{popUp.defined && <LaunchPopUp control={popUp} close={close} />}

@@ -1,7 +1,7 @@
 import { RC } from "../../helper/react/types";
 import { ScatteredContinuousState } from "../../hooks/use-continuous-state";
-import { PopUpContainer } from "../../ui/pop-up-container";
-import { NavLink } from "../../ui/button";
+import { PopUpContainer } from "../../components/pop-up-container";
+import { NavLink } from "../../components/button";
 import styles from "./LaunchPopUp.module.scss";
 
 const LINKS = [
@@ -18,12 +18,13 @@ const LINKS = [
 		href: "#",
 	},
 	{
-		caption: (
-			<>
-				The Hub<span>Coming soon</span>
-			</>
-		),
-		href: "#",
+		// caption: (
+		// 	<>
+		// 		The Hub<span>Coming soon</span>
+		// 	</>
+		// ),
+		caption: "The Hub",
+		href: "/hub",
 	},
 ];
 
@@ -35,6 +36,7 @@ export const LaunchPopUp: RC<{
 		<div className={styles.component}>
 			{LINKS.map((item) => (
 				<NavLink
+					key={item.href}
 					className={styles.link}
 					href={item.href}
 					variant="outlined"

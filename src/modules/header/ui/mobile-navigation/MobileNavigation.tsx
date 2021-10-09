@@ -2,9 +2,9 @@ import type { CSSProperties, FC, ReactNode } from "react";
 import classNames from "classnames";
 import styles from "./MobileNavigation.module.scss";
 import { MaybeWithClassName } from "../../../../helper/react/types";
-import { NavLink } from "../../../../ui/button";
+import { NavLink } from "../../../../components/button";
 import { SOCIAL } from "../../../../const/const";
-import { Envelop, GitHub, Medium, Telegram, Twitter } from "../../../../ui/icons/Icons";
+import { Envelop, GitHub, Medium, Telegram, Twitter } from "../../../../components/icons/Icons";
 import React from "react";
 import { useWindowSize } from "../../../../hooks/use-window-size";
 

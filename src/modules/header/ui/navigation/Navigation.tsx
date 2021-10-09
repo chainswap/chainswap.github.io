@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import styles from "./Navigation.module.scss";
 import { MaybeWithClassName } from "../../../../helper/react/types";
-import { NavLink } from "../../../../ui/button";
+import { NavLink } from "../../../../components/button";
 import { SOCIAL } from "../../../../const/const";
-import { Envelop, GitHub, Medium, Telegram, Twitter } from "../../../../ui/icons/Icons";
+import { Envelop, GitHub, Medium, Telegram, Twitter } from "../../../../components/icons/Icons";
 
 export type LinkType = {
 	link: string;
