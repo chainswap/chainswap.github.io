@@ -97,10 +97,10 @@ export const Hub: FC<HomeType> = () => {
 					</Body1>
 				</div>
 				<Video className={styles.video} source={video} autoPlay={true} imageSource={image} loop />
-				<div className={styles.marqueeWrapper}>
-					<Marquee isBlack={true} />
-				</div>
 			</section>
+			<div className={styles.marqueeWrapper}>
+				<Marquee isBlack={true} />
+			</div>
 			<section className={styles.blockWrapper}>
 				{BlockList.map((data) => (
 					<Block data={data} key={data.title} />
