@@ -55,7 +55,6 @@ export const Video = forwardRef<HTMLVideoElement, VideoType>(
 					playsInline
 					ref={useMergeRefs([videoRef, ref])}
 					style={style}
-					playsinline
 				>
 					<source src={source} type="video/mp4" />
 					{sourceHevc && <source src={sourceHevc} type="video/mp4; codecs=hevc,mp4a.40.2" />}
