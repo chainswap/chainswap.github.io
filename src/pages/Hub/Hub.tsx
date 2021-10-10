@@ -28,11 +28,18 @@ interface BlockType {
 
 const BlockList: BlockType[] = [
 	{
-		title: "Chainswap Bridge",
-		subTitle: "Permissionless crosschain bridge",
+		title: "Chainswap Anyswap",
+		subTitle: "Chainswap Bridge that integrates with Anyswap Solution ",
 		status: Status.live,
-		img: "chainswap.png",
+		img: "chainswapAnyswap.png",
 		link: "https://exchange.chainswap.com/",
+	},
+	{
+		title: "Chainswap Bridge V2",
+		subTitle: "Permissionless crosschain bridge",
+		status: Status.comingSoon,
+		img: "chainswap.png",
+		link: "",
 	},
 	{
 		title: "NFT Bridge",
@@ -41,13 +48,7 @@ const BlockList: BlockType[] = [
 		img: "NFTBridge.png",
 		link: "",
 	},
-	{
-		title: "Chainswap Anyswap",
-		subTitle: "Chainswap Bridge that integrates with Anyswap Solution ",
-		status: Status.live,
-		img: "chainswapAnyswap.png",
-		link: "https://exchange.chainswap.com/",
-	},
+
 	{
 		title: "Crosschain DEX",
 		subTitle: "Crosschain Swap and trading protocol",
@@ -116,7 +117,7 @@ export const Hub: FC<HomeType> = () => {
 				</div>
 			</section>
 			<footer className={classNames(styles.footer)}>
-				<p>©2021 Antimatter Dao Ltd. All rights reserved.</p>
+				<p>©2021 Chainswap Ltd. All rights reserved.</p>
 				<Navigation className={styles.nav} />
 			</footer>
 		</>
