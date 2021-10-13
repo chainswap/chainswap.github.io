@@ -128,6 +128,10 @@
 		opacity: 0.6;
 		margin: 0;
 	}
+	.filler {
+		transition: 0.5s;
+		height: 80px;
+	}
 	@include mixin.until(media.$md) {
 		height: auto;
 		min-height: 248px;
@@ -174,10 +178,6 @@
 }
 
 .liveBlock {
-	.filler {
-		transition: 0.5s;
-		height: 80px;
-	}
 	.imgWrapper {
 		transition: 0.5s;
 		height: 60px;
