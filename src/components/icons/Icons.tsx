@@ -93,7 +93,10 @@ export const Toggle = (props: SVGAttributes<SVGElement>) => {
 			xmlns="http://www.w3.org/2000/svg"
 			{...props}
 		>
-			<path fill="currentColor" d="M0 0h24v1H0zM0 9h24v1H0z" />
+			<path d="M8 0H24V1H8V0Z" fill="black" />
+			<rect y="9" width="24" height="1" fill="black" />
+
+			{/* <path fill="currentColor" d="M0 0h24v1H0zM0 9h24v1H0z" /> */}
 		</svg>
 	);
 };

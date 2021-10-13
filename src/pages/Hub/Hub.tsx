@@ -28,8 +28,8 @@ interface BlockType {
 
 const BlockList: BlockType[] = [
 	{
-		title: "Chainswap Anyswap",
-		subTitle: "Chainswap Bridge that integrates with Anyswap Solution ",
+		title: "Chainswap + Anyswap",
+		subTitle: "Chainswap Bridge powered by Anyswap Solution",
 		status: Status.live,
 		img: "chainswapAnyswap.png",
 		link: "https://exchange.chainswap.com/",
@@ -50,7 +50,7 @@ const BlockList: BlockType[] = [
 	},
 
 	{
-		title: "Crosschain DEX",
+		title: "Cross-chain DEX",
 		subTitle: "Crosschain Swap and trading protocol",
 		status: Status.comingSoon,
 		img: "crosschainDex.png",
@@ -58,7 +58,7 @@ const BlockList: BlockType[] = [
 	},
 
 	{
-		title: "Crosschain Lending",
+		title: "Cross-chain Lending",
 		subTitle: "Crosschain lending and borrowing protocol",
 		status: Status.comingSoon,
 		img: "crosschainLending.png",
@@ -72,7 +72,7 @@ const BlockList: BlockType[] = [
 		link: "",
 	},
 	{
-		title: "Chainswap Statistics",
+		title: "Chainswap Scan Statistics",
 		subTitle: "Live statistics to track network usage",
 		status: Status.comingSoon,
 		img: "chainswapStatistics.png",
@@ -89,14 +89,21 @@ export const Hub: FC<HomeType> = () => {
 				className={styles.component}
 				style={{ "--window-height": windowHeight ? `${windowHeight}px` : "100vh" } as CSSProperties}
 			>
-				<div className={styles.title}>
-					<h1 className={styles.titleText}>The cross-chain {"\n"}hub for all chains</h1>
+				<div className={classNames(styles.title, styles.hideMobile)}>
+					<h1 className={styles.titleText}>The cross-chain {"\n"}hub for all ecosystems</h1>
 					<Body1 className={styles.text} color="black">
 						Asset. Data. Application.
 						{/*<span style={{ opacity: 0.4 }}>All chains with one dream.</span>*/}
 					</Body1>
 				</div>
 				<Video className={styles.video} source={video} autoPlay={true} imageSource={image} loop />
+				<div className={classNames(styles.title, styles.showMobile)}>
+					<h1 className={styles.titleText}>The cross-chain {"\n"}hub for all ecosystems</h1>
+					<Body1 className={styles.text} color="black">
+						Asset. Data. Application.
+						{/*<span style={{ opacity: 0.4 }}>All chains with one dream.</span>*/}
+					</Body1>
+				</div>
 			</section>
 			<div className={styles.marqueeWrapper}>
 				<Marquee isBlack={true} />
@@ -108,7 +115,7 @@ export const Hub: FC<HomeType> = () => {
 			</section>
 			<section className={styles.bottomBlock}>
 				<div className={styles.grid}>
-					<p>Want to be aware of all the news and updates? Read our blog</p>
+					<p>Wanna keep track of ChainSwap's updates? Read our blog</p>
 					<span>
 						<NavLink className={styles.goToMedium} href="https://chain-swap.medium.com/">
 							Go To Medium
@@ -117,7 +124,7 @@ export const Hub: FC<HomeType> = () => {
 				</div>
 			</section>
 			<footer className={classNames(styles.footer)}>
-				<p>©2021 Chainswap Ltd. All rights reserved.</p>
+				<p>©2021 Chainswap Ltd. {"\n"}All rights reserved.</p>
 				<Navigation className={styles.nav} />
 			</footer>
 		</>
