@@ -4,7 +4,7 @@
 .component {
 	color: #000000;
 	display: grid;
-	grid-template-rows: 1fr 55.5vw auto;
+	grid-template-rows: 55.5vw 1fr;
 	background-color: #ffffff;
 	height: auto;
 
@@ -41,21 +41,16 @@
 	background-color: #ffffff;
 	width: 100%;
 	max-width: var(--max-width);
-	padding: 2rem var(--gutters) 4rem;
-	margin: 0 auto;
+	padding: 4rem var(--gutters);
+	margin: 75px auto 0;
 	max-height: 395px;
 	box-sizing: border-box;
 
 	@include mixin.until(media.$sm) {
+		gap: 20px;
 		justify-items: start;
 		padding: 2.5rem var(--gutters);
-	}
-
-	@include mixin.from(media.$md) {
-		grid-auto-flow: column;
-		align-items: flex-end;
-		justify-content: space-between;
-		margin-top: 75px;
+		margin-top: 0;
 	}
 }
 
@@ -356,14 +351,14 @@
 }
 
 .hideMobile {
-	@include mixin.until(media.$md) {
+	@include mixin.until(media.$sm) {
 		display: none;
 	}
 }
 
 .showMobile {
 	display: none;
-	@include mixin.until(media.$md) {
+	@include mixin.until(media.$sm) {
 		display: inherit;
 	}
 }
