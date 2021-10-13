@@ -72,7 +72,7 @@ const BlockList: BlockType[] = [
 		link: "",
 	},
 	{
-		title: "Chainswap Scan Statistics",
+		title: "Chainswap Scan",
 		subTitle: "Live statistics to track network usage",
 		status: Status.comingSoon,
 		img: "chainswapStatistics.png",
@@ -115,7 +115,7 @@ export const Hub: FC<HomeType> = () => {
 			</section>
 			<section className={styles.bottomBlock}>
 				<div className={styles.grid}>
-					<p>Wanna keep track of ChainSwap's updates? Read our blog</p>
+					<p>Wanna keep track of ChainSwap's updates? {"\n"}Read our blog</p>
 					<span>
 						<NavLink className={styles.goToMedium} href="https://chain-swap.medium.com/">
 							Go To Medium
