@@ -4,12 +4,12 @@ export const TELEGRAM_PATH = "https://t.me/chainswap";
 export const TWITTER_PATH = "https://twitter.com/chain_swap";
 
 export const WHITEPAPER = "https://github.com/chainswap/chainswap.github.io";
-export const CONTACT = "mailto:contact@chainswap.com";
+export const CONTACT = "mailto:support@chainswap.com";
 
 export const SOCIAL = {
 	Github: GITHUB_PATH,
 	Twitter: TWITTER_PATH,
 	Telegram: TELEGRAM_PATH,
 	Medium: MEDIUM_PATH,
-	"contact@chainswap.com": CONTACT,
+	"support@chainswap.com": CONTACT,
 };
