@@ -38,6 +38,7 @@ export const Layout: FC<LayoutType> = ({
 				<title>{title}</title>
 				<meta name="Description" content={description} />
 				<meta name="keywords" content={keywords} />
+				<meta property="og:url" content="https://chainswap.com/" />
 			</Head>
 			<Header className={styles.header} isBlack={isBlack} />
 			<main className={styles.main}>{children}</main>
