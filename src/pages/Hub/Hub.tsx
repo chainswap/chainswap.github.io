@@ -1,4 +1,4 @@
-import { FC, CSSProperties } from "react";
+import React, { FC, CSSProperties } from "react";
 import styles from "./Hub.module.scss";
 import { Video } from "../../components/video";
 import { Body1 } from "../../components/typography";
@@ -20,7 +20,7 @@ enum Status {
 
 interface BlockType {
 	title: string;
-	subTitle: string;
+	subTitle: string | JSX.Element;
 	status: Status;
 	img: string;
 	link?: string;
@@ -28,15 +28,18 @@ interface BlockType {
 
 const BlockList: BlockType[] = [
 	{
-		title: "Chainswap + Anyswap",
-		subTitle: "Chainswap Bridge powered by Anyswap Solution",
-		status: Status.live,
-		img: "chainswapAnyswap.png",
-		link: "https://exchange.chainswap.com/",
-	},
-	{
-		title: "Chainswap Bridge V2",
-		subTitle: "Permissionless crosschain bridge",
+		title: "Cross-chain Bridge Aggregator ",
+		subTitle: (
+			<div>
+				<p style={{ marginBottom: 49 }}>Permissionless crosschain bridge</p>
+				<div className={styles.aggregatorIcons}>
+					<img src={`/images/aggregator/anySwap.png`} alt="" />
+					<img src={`/images/aggregator/polynetwork.png`} alt="" />
+					<img src={`/images/aggregator/connext.png`} alt="" />
+					<img src={`/images/aggregator/wormhole.png`} alt="" />
+				</div>
+			</div>
+		),
 		status: Status.comingSoon,
 		img: "chainswap.png",
 		link: "",
@@ -48,7 +51,13 @@ const BlockList: BlockType[] = [
 		img: "NFTBridge.png",
 		link: "https://nft.chainswap.com",
 	},
-
+	{
+		title: "Chainswap + Anyswap",
+		subTitle: "Bridge all tokens from one place",
+		status: Status.live,
+		img: "chainswapAnyswap.png",
+		link: "https://exchange.chainswap.com/",
+	},
 	{
 		title: "Cross-chain DEX",
 		subTitle: "Crosschain Swap and trading protocol",
@@ -109,8 +118,12 @@ export const Hub: FC<HomeType> = () => {
 				<Marquee isBlack={true} />
 			</div>
 			<section className={styles.blockWrapper}>
-				{BlockList.map((data) => (
-					<Block data={data} key={data.title} />
+				{BlockList.map((data, idx) => (
+					<Block
+						data={data}
+						key={data.title}
+						className={idx === 0 ? styles.aggregator : undefined}
+					/>
 				))}
 			</section>
 			<section className={styles.bottomBlock}>
@@ -131,9 +144,21 @@ export const Hub: FC<HomeType> = () => {
 	);
 };
 
-const Block = ({ data: { status, img, title, subTitle, link } }: { data: BlockType }) => {
+const Block = ({
+	className,
+	data: { status, img, title, subTitle, link },
+}: {
+	data: BlockType;
+	className?: string;
+}) => {
 	return (
-		<div className={classNames(styles.block, status === Status.live ? styles.liveBlock : "")}>
+		<div
+			className={classNames(
+				styles.block,
+				status === Status.live ? styles.liveBlock : "",
+				className
+			)}
+		>
 			<div className={styles.rowBetween} style={{ alignItems: "flex-start" }}>
 				<div className={styles.imgWrapper}>
 					<img src={`/images/hub/${img}`} alt={title} />
