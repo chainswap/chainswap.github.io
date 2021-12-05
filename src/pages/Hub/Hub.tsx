@@ -40,9 +40,9 @@ const BlockList: BlockType[] = [
 				</div>
 			</div>
 		),
-		status: Status.comingSoon,
+		status: Status.live,
 		img: "chainswap.png",
-		link: "",
+		link: "https://exchange.chainswap.com/",
 	},
 	{
 		title: "NFT Bridge",
