@@ -51,13 +51,13 @@ const BlockList: BlockType[] = [
 		img: "NFTBridge.png",
 		link: "https://nft.chainswap.com",
 	},
-	{
-		title: "Chainswap + Anyswap",
-		subTitle: "Bridge all tokens from one place",
-		status: Status.live,
-		img: "chainswapAnyswap.png",
-		link: "https://exchange.chainswap.com/",
-	},
+	// {
+	// 	title: "Chainswap + Anyswap",
+	// 	subTitle: "Bridge all tokens from one place",
+	// 	status: Status.live,
+	// 	img: "chainswapAnyswap.png",
+	// 	link: "https://exchange.chainswap.com/",
+	// },
 	{
 		title: "Cross-chain DEX",
 		subTitle: "Crosschain Swap and trading protocol",
